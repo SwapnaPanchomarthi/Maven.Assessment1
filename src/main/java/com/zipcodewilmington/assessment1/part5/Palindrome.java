@@ -19,7 +19,7 @@ public class Palindrome {
         for (int i = 0; i < len; i++) {
             for (int j = startIndex; j <= len; j++) {
                 subString = input.substring(startIndex, j);
-                System.out.println(subString);
+                //System.out.println(subString);
 
                 count = checkPalindrome(subString);
 
