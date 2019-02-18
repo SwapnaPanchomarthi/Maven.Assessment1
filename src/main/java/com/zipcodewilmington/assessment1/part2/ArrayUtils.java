@@ -35,19 +35,21 @@ public class ArrayUtils {
      * @return an array with identical content excluding the specified `objectToRemove`
      * Given an array of objects, name `objectArray`, and an object `objectToRemove`, return an array of objects with identical contents excluding `objectToRemove`
      */
-  /*  public static Integer[] removeValue(Integer[] objectArray, Object objectToRemove) {
+    public static Integer[] removeValue(Integer[] objectArray, Integer objectToRemove) {
         if (objectArray != null) {
-            List<Object> list = new ArrayList<Object>(Arrays.asList(objectArray));
+            List<Integer> list = new ArrayList<Integer>(Arrays.asList(objectArray));
             for (int i = 0; i < list.size(); i++) {
                 if (list.get(i).equals(objectToRemove)) {
                     list.remove(i);
+
+                   objectArray=list.toArray(objectArray);
                 }
             }
-            return objectArray;
+
 
         }
-
-    }*/
+        return objectArray;
+    }
 
     /**
      * @param objectArray an array of any type of Object
@@ -84,24 +86,21 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Integer getLeastCommon(Integer[] objectArray) {
-        Integer minCount=0;
-        Integer minValue=0;
+        Integer minCount = 0;
+        Integer minValue = 0;
+        int n = objectArray.length;
 
-        for (int i = 0; i < objectArray.length; i++) {
-            int count = 0;
-
-            for (int j = 0; j < objectArray.length; j++) {
-                if (objectArray[j] == objectArray[i]) {
-                    count++;
-                }
-            }
-
-            if (count > minCount) {
-                minCount = count;
-                minValue = objectArray[i];
-            }
-
+        for (int i = 0; i < n; i++) {
+            int j;
+            for (j=0; j<n; j++)
+                if (i != j && objectArray[i] == objectArray[j])
+                    break;
+            if (j == n)
+                return objectArray[i];
+            minValue =objectArray[i];
         }
+
+
         return minValue;
     }
     /**

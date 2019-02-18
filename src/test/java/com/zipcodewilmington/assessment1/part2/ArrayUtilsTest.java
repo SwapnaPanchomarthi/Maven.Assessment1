@@ -22,7 +22,7 @@ public class ArrayUtilsTest {
         Assert.assertEquals(expected, actual);
     }
 
-  /*  @Test
+    @Test
    public void removeValueTest1() {
         // Given
         Integer valueToRemove = 7;
@@ -34,7 +34,7 @@ public class ArrayUtilsTest {
 
         // Then
         UnitTestingUtils.assertArrayEquality(expected, actual);
-    }*/
+    }
 
 
     @Test
