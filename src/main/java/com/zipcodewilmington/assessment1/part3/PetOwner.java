@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part3;
 
+import java.util.ArrayList;
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -8,19 +10,31 @@ public class PetOwner {
      * @param name name of the owner of the Pet
      * @param pets array of Pet object
      */
+    private String name;
+    private Pet[] pets;
+    private volatile ArrayList<PetOwner> list = new ArrayList<>();
     public PetOwner(String name, Pet... pets) {
+        this.name=name;
+        this.pets=pets;
+    }
+
+    public PetOwner() {
     }
 
     /**
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
+
+            list.add(pet);
+
     }
 
     /**
      * @param pet pet to be removed from the composite collection Pets
      */
     public void removePet(Pet pet) {
+        list.remove(pet);
 
     }
 
@@ -29,14 +43,18 @@ public class PetOwner {
      * @return true if I own this pet
      */
     public Boolean isOwnerOf(Pet pet) {
-        return null;
+        boolean flag=false;
+        if(pet.getOwner()==pet)
+            flag = true;
+
+        return flag;
     }
 
     /**
      * @return the age of the Pet object whose age field is the lowest amongst all Pets in this class
      */
     public Integer getYoungetPetAge() {
-        return null;
+        return getYoungetPetAge().getClass();
     }
 
 

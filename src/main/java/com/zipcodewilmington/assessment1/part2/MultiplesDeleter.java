@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part2;
 
+
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -10,7 +12,19 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with evens removed
      */
     public Integer[] deleteEvens(Integer[] ints) {
-        return null;
+
+
+        for(int i=0;i<ints.length;i++){
+            boolean x=true;
+            if(ints[i]%2==0){
+                x=false;
+            }
+            if(!x){
+                //System.out.println(ints[i]);
+                System.out.print( ints[i] + " ");
+            }
+        }
+        return ints;
     }
 
     /**
@@ -19,7 +33,18 @@ public class MultiplesDeleter {
      * given an array of integers, named `ints` return an identical array with odds removed
      */
     public Integer[] deleteOdds(Integer[] ints) {
-        return null;
+        for(int i=0;i<ints.length;i++) {
+            boolean x = false;
+            if (ints[i] % 2 != 0) {
+                x = true;
+            }
+            if (!x) {
+                //System.out.println(ints[i]);
+                //ints[i] = ints[i] + ints[i + 1];
+                System.out.print( ints[i] + " ");
+            }
+        }
+        return ints;
     }
 
     /**
