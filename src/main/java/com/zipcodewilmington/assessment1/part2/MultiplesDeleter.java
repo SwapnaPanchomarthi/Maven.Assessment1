@@ -65,10 +65,10 @@ public class MultiplesDeleter {
     public Integer[] deleteMultiplesOfN(Integer[] ints, int multiple) {
         int i, j;
         for (i = j = 0; i < ints.length; i++)
-            if (ints[i] % multiple == 1) j++;
+            if (ints[i] % multiple >= 1) j++;
         Integer[] r = new Integer[j];
         for (i = j = 0; i < ints.length; i++)
-            if (ints[i] % multiple == 1) r[j++] = ints[i];
+            if (ints[i] % multiple >= 1) r[j++] = ints[i];
         return r;
     }
 }
